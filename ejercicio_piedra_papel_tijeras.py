@@ -6,12 +6,9 @@ import input_jugador
 
 
 def maquina():
-    
     aleatorio = random.randrange(len(data.frames)) 
-    opciones = ["Piedra", "Papel", "Tijeras", "Lagarto", "Spock"]
-    eleccion_maquina = opciones[aleatorio]
     
-    return aleatorio, eleccion_maquina
+    return aleatorio
         
 
 def logica_juego(eleccion_jugador, eleccion_maquina):
@@ -51,7 +48,7 @@ def main():
     
     while puntos_jugador < 2 and puntos_maquina < 2:
         eleccion_jugador = input_jugador.jugador()
-        eleccion_maquina, nombre_eleccion_maquina = maquina()
+        eleccion_maquina = maquina()
 
         opciones = data.frames
         print(f"Has elegido: {opciones[eleccion_jugador]}")
